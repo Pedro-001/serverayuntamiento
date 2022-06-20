@@ -6,7 +6,7 @@ return new Promise( (resolve,reject) =>{
     const payload = { uid };
 
     jwt.sign(payload, process.env.JWT_KEY, {
-        expiresIn:'48h'
+        expiresIn:'4800h'
     },( err, token) => {
         if(err){
             reject('No se pudo genera JWT');

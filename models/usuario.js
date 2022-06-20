@@ -4,21 +4,33 @@ const { Schema, model} =require('mongoose');
 const UsuarioSchema = Schema({
     nombre:{
         type: String,
-        required: true
+        //required: true
+        default: 'no proporcionado',
+
     },
     email:{
         type: String,
         required: true,
-        unique:true
+        default: 'no propocionado',
+       // unique:true
     },
     contraseña:{
         type: String,
-        required: true
+        //required: true
     },
     online: {
         type: Boolean,
         default: false
+    },
+    descripcion:{
+        type: String,
+        default: 'no proporcionado',
+    },
+    telefono:{
+        type: String,
+        default: 'no proporcionado'
     }
+
 
 });
 

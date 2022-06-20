@@ -20,8 +20,8 @@ const router = Router();
     //Nuevo usuario
 router.post('/new',[
     check('nombre', 'Nombre de usuario es obligatorio').not().isEmpty(),
-    check('contraseña', 'Contraseña usuario es obligatorio').not().isEmpty(),
-    check('email', 'Email usuario es obligatorio').not().isEmpty().isEmail(),
+//    check('telefono', 'telefono usuario es obligatorio').not().isEmpty(),
+//    check('descripcion', 'descripcion usuario es obligatorio').not().isEmpty().isEmail(),
     validarCampos
 ] ,crearUsuario);
 

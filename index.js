@@ -1,4 +1,5 @@
 const express = require('express');
+var cors = require('cors');
 const path = require('path');
 require('dotenv').config();
 
@@ -22,6 +23,8 @@ module.exports.io = require('socket.io')(server);
 require('./sockets/socket');
 
 
+// use it before all route definitions
+app.use(cors({origin: '*'}));
 
 
 // Path público
