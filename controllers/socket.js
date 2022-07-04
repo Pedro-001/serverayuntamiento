@@ -3,12 +3,9 @@ const Usuario =  require('../models/usuario');
 
 
 const usuarioConectado  = async(uid = '')=>{
-
-    const usuario = await Usuario.findByid(uid);
-    usuario.online =  true;
-
+    const usuario  = await Usuario.findById( uid );
+    usuario.online = true;
     await usuario.save();
-
     return usuario;
 
 
@@ -16,12 +13,9 @@ const usuarioConectado  = async(uid = '')=>{
 
 
 const usuarioDesconectado  = async(uid = '')=>{
-
-    const usuario = await Usuario.findByid(uid);
-    usuario.online =  false;
-
+    const usuario  = await Usuario.findById( uid );
+    usuario.online = false;
     await usuario.save();
-
     return usuario;
 
 
