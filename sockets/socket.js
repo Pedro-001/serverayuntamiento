@@ -9,7 +9,7 @@ io.on('connection', client => {
     console.log(client.handshake.headers['x-token']);
 
     ///    /// comprobar JWT
-        const [valido, uid] = comprobarJWT(client.handshake.headers['x-token']);
+    //    const [valido, uid] = comprobarJWT(client.handshake.headers['x-token']);
         console.log(valido);
     
     ///     Verificar autenticación
