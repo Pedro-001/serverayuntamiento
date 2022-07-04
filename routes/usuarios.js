@@ -16,8 +16,8 @@ const router = Router();
 //Rutas
 const {getUsuarios} = require('../controllers/usuarios')
 
- //router.get('/',[validarJWT], getUsuarios );
- router.get('/',getUsuarios );
+ router.get('/',[validarJWT], getUsuarios );
+
 
 
 module.exports = router;
