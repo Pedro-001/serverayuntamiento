@@ -4,7 +4,7 @@ const Usuario = require('../models/usuario');
 const getUsuarios = async (req, res = response )=> {
 
     const usuarios = await  Usuario.find()
-        //.find({_id: {$ne: req.uid}})
+        .find({ _id: { $ne: req.uid } })
         .sort('-online')
     
 
