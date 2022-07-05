@@ -24,7 +24,12 @@ io.on('connection', client => {
     //Escuchar el mensaje del cliente
     client.on('ubicacion-personal', (payload) =>{
         console.log(payload);
+        //transmitir el mensaje
+        //io.to(payload.to).emit('ubicacion-personal', payload);
+        io.to('62c3d27086389d236fa06589').emit('ubicacion-personal', payload); //Momentaneo
     })
+
+
 
     
 
