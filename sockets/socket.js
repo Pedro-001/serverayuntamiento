@@ -1,4 +1,4 @@
-const { usuarioConectado, usuarioDesconectado } = require('../controllers/socket');
+const { usuarioConectado, usuarioDesconectado, grabarMensaje } = require('../controllers/socket');
 const { comprobarJWT } = require('../helpers/jwt');
 const { io } = require('../index');
 
@@ -22,8 +22,11 @@ io.on('connection', client => {
     client.join(uid);
 
     //Escuchar el mensaje del cliente
-    client.on('ubicacion-personal', (payload) =>{
+    client.on('ubicacion-personal', async(payload) =>{
         console.log(payload);
+
+        //Grabar mensaje
+        await grabarMensaje(payload);
         //transmitir el mensaje
         io.to(payload.to).emit('ubicacion-personal', payload);
     })
