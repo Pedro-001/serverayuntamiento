@@ -1,5 +1,5 @@
 const Usuario =  require('../models/usuario');
-const Usuario =  require('../models/mensaje');
+const Mensaje =  require('../models/mensaje');
 
 
 
